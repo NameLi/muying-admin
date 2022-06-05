@@ -1,0 +1,167 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 1066754 */
+  src: url('iconfont.woff2?t=1653491623691') format('woff2'),
+       url('iconfont.woff?t=1653491623691') format('woff'),
+       url('iconfont.ttf?t=1653491623691') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-love:before {
+  content: "\e600";
+}
+
+.icon-like:before {
+  content: "\e64f";
+}
+
+.icon-role:before {
+  content: "\e60d";
+}
+
+.icon-comment:before {
+  content: "\e634";
+}
+
+.icon-log:before {
+  content: "\e61c";
+}
+
+.icon-diamond:before {
+  content: "\e6a1";
+}
+
+.icon-relation:before {
+  content: "\e647";
+}
+
+.icon-basic:before {
+  content: "\e658";
+}
+
+.icon-data:before {
+  content: "\e796";
+}
+
+.icon-block:before {
+  content: "\e63a";
+}
+
+.icon-card:before {
+  content: "\e68a";
+}
+
+.icon-min:before {
+  content: "\e687";
+}
+
+.icon-max:before {
+  content: "\e69a";
+}
+
+.icon-paused:before {
+  content: "\e619";
+}
+
+.icon-play:before {
+  content: "\e623";
+}
+
+.icon-recomment:before {
+  content: "\e637";
+}
+
+.icon-cancel:before {
+  content: "\e6c9";
+}
+
+.icon-delete:before {
+  content: "\e607";
+}
+
+.icon-home:before {
+  content: "\e655";
+}
+
+.icon-photo:before {
+  content: "\e67b";
+}
+
+.icon-actor:before {
+  content: "\e604";
+}
+
+.icon-user:before {
+  content: "\e6ce";
+}
+
+.icon-message:before {
+  content: "\e60b";
+}
+
+.icon-system:before {
+  content: "\e639";
+}
+
+.icon-notice:before {
+  content: "\e64d";
+}
+
+.icon-girl:before {
+  content: "\e6a6";
+}
+
+.icon-logout:before {
+  content: "\e659";
+}
+
+.icon-boy:before {
+  content: "\e64a";
+}
+
+.icon-nav:before {
+  content: "\e633";
+}
+
+.icon-arrow-down:before {
+  content: "\e735";
+}
+
+.icon-video:before {
+  content: "\e699";
+}
+
+.icon-torrent:before {
+  content: "\e606";
+}
+
+.icon-chart:before {
+  content: "\e648";
+}
+
+.icon-movie:before {
+  content: "\e628";
+}
+
+.icon-article:before {
+  content: "\e605";
+}
+
+.icon-close:before {
+  content: "\e641";
+}
+
+.icon-sync:before {
+  content: "\e613";
+}
+
+.icon-album:before {
+  content: "\e905";
+}
+

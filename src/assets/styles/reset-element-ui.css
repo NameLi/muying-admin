@@ -1,0 +1,147 @@
+/* 重写 消息/模态框 样式  bootstrap风格 */
+
+.el-message-box__header, .el-dialog__header {
+	height: 46px;
+	line-height: 46px;
+	padding: 0 15px;
+	border-bottom: 1px solid #e5e5e5;
+}
+
+.el-message-box__title, .el-dialog__title {
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.el-message-box__headerbtn, .el-dialog__headerbtn {
+	font-size: 18px;
+	top: 14px;
+}
+
+.el-message-box__btns, .el-dialog__footer {
+	padding: 12px 15px;
+	border-top: 1px solid #e5e5e5;
+}
+
+.el-dialog__body {
+	padding: 15px;
+}
+
+.el-message-box__title {
+	height: 46px;
+	line-height: 46px;
+}
+
+.el-message-box {
+	padding-bottom: 0;
+}
+
+.el-message-box__content {
+	padding: 25px 15px;
+}
+
+/* 重写 radio 样式 */
+
+.el-radio__input.is-checked .el-radio__inner {
+	border-color: #447ed9;
+	background: #447ed9;
+}
+
+.el-radio__inner:after {
+	width: 10px;
+	height: 10px;
+	border-radius: 100%;
+	background-color: #447ed9;
+	border: 1px solid #fff;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%) scale(0);
+	transition: transform .15s ease-in;
+}
+
+.el-menu:after, .el-menu:before, .el-radio__inner:after, .el-switch__core:after {
+	content: "";
+}
+
+/* 重写表格表头排序样式（减少排序样式高度） */
+
+.el-table .caret-wrapper {
+	margin-right: -10px;
+	height: 20px;
+}
+
+.el-table .sort-caret.descending {
+	bottom: 0px
+}
+
+.el-table .sort-caret.ascending {
+	top: -2px
+}
+
+.el-table [class*=el-table__row--level] .el-table__expand-icon {
+	display: inline-block;
+	width: 20px;
+	line-height: 20px;
+	height: 20px;
+	text-align: center;
+	margin-right: 3px;
+}
+
+.el-table th.el-table__cell {
+	background: #eef1f6;
+}
+
+.el-table .el-button--small {
+	padding: 6px 9px;
+	border-radius: 2px;
+}
+
+/* 重写分页边距样式 */
+
+.el-pagination {
+	padding: 2px 0;
+}
+
+.el-pagination .el-input--mini .el-input__inner {
+	height: 22px;
+	line-height: 22px;
+}
+
+.el-pagination .el-input--mini .el-input__icon {
+	line-height: 22px;
+}
+
+.el-pagination button, .el-pagination span:not([class*=suffix]) {
+	font-size: 12px;
+}
+
+.el-pagination__jump {
+	margin-left: 0;
+}
+
+/* 重写 popover 样式 */
+
+.el-tooltip {
+	cursor: pointer;
+}
+
+.el-tooltip__popper {
+	/* left: ; */
+	max-width: 60vw;
+}
+
+/* 图片预览 */
+
+.el-image-viewer__mask {
+	opacity: .75;
+}
+
+.el-image-viewer__close {
+	color: #fff;
+}
+
+/*  */
+
+.el-drawer {
+	outline: none;
+}

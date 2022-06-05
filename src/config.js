@@ -1,0 +1,1 @@
+export const API_DOMAIN = 'https://test-admin-api.ixook.com'
