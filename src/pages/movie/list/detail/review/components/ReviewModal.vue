@@ -45,7 +45,7 @@
       </el-form-item>
 
       <el-form-item>
-        <wang-editor class="wang-editor" ref="editor" v-model="form.content" />
+        <wang-editor class="wang-editor" category="movie" ref="editor" v-model="form.content" />
       </el-form-item>
     </el-form>
 

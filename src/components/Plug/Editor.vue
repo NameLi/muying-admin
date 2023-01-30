@@ -24,6 +24,8 @@
 <script>
 import E from "wangeditor";
 import MixSearch from "./MixSearch";
+import { getQiniuUpToken } from "@/api/api";
+import * as qiniu from "qiniu-js";
 
 export default {
   name: "WangEditor",
@@ -39,6 +41,19 @@ export default {
       type: String,
       default: "650px",
     },
+    id: {
+      type: Number,
+      default: null,
+    },
+    category: {
+      type: String,
+      required: true,
+    },
+    // 允许类型
+    acceptType: {
+      type: Array,
+      default: () => ["image/png", "image/jpeg", "image/gif"],
+    },
   },
 
   data() {
@@ -46,6 +61,8 @@ export default {
       visible: false,
       movie: "",
       editor: null,
+      uploadProgress: 0,
+      isUploading: false,
     };
   },
 
@@ -230,29 +247,85 @@ export default {
       ];
 
       // 限制上传图片尺寸
-      editor.config.uploadImgMaxSize = 2 * 1024 * 1024; // 2M
+      editor.config.uploadImgMaxSize = 5 * 1024 * 1024; // 5M
       editor.config.uploadImgAccept = ["jpg", "jpeg", "png", "gif", "bmp"];
-      editor.config.uploadImgMaxLength = 10; // 单次上传图片数
+      editor.config.uploadImgMaxLength = 1; // 单次上传图片数
       editor.config.showLinkImg = false; // 禁用网络图片
 
       // 自定义图片上传到云服务
+      // resultFiles 是 input 中选中的文件列表
+      // insertImgFn 是获取图片 url 后，插入到编辑器的方法
       editor.config.customUploadImg = function (files, insertImgFn) {
-        // resultFiles 是 input 中选中的文件列表
-        // insertImgFn 是获取图片 url 后，插入到编辑器的方法
-        // client
-        //   .put("myImg", resultFiles[0])
-        //   .then(function (res) {
-        //     // 上传图片，返回结果，将图片插入到编辑器中
-        //     insertImgFn(res.url);
-        //   })
-        //   .catch(function (err) {
-        //     console.log(err);
-        //   });
+        _this.handleImageUpload(files[0], insertImgFn);
       };
 
       editor.create();
 
       this.editor = editor;
+    },
+
+    async handleImageUpload(file, insertImgFn) {
+      console.log(file)
+
+      // 获取上传token
+      let params = {
+        category: this.category,
+        type: "poster",
+      };
+      const { code, data } = await getQiniuUpToken(params);
+
+      if (code === 200) {
+        this.isUploading = true;
+
+        const token = data;
+
+        const key = null;
+
+        // 额外参数
+        const putExtra = {
+          fname: "",
+          params: {
+            "x:union_id": this.id, // 所属父类id
+            "x:category": this.category,
+            "x:type": "poster",
+            "x:subtype": "",
+          },
+          mimeType: this.acceptType, // 允许文件类型
+        };
+
+
+        const config = {
+          useCdnDomain: false, // 使用cdn加速
+          disableStatisticsReport: true, // 是否禁用日志报告
+          region: qiniu.region.z0, // 上传域名区域
+        };
+
+        const observable = qiniu.upload(file, key, token, putExtra, config);
+
+        observable.subscribe({
+          // 上传进度
+          next: (res) => {
+            console.log(res)
+            this.uploadProgress = Math.floor(res.total.percent);
+            // this.$emit("on-progress", res);
+          },
+
+          // 上传失败
+          error: (err) => {
+            console.log(err)
+            // this.isUploading = false;
+            // this.$emit("on-error", err);
+            this.$message.error(err.code + " 上传失败");
+          },
+
+          // 上传完成
+          complete: (res) => {
+            console.log(res)
+            // this.isUploading = false;
+            insertImgFn(res.url);
+          },
+        });
+      }
     },
 
     // 获取编辑器内容

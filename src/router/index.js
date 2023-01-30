@@ -12,6 +12,7 @@ const constantRoutes = [
   },
   {
     path: "/login",
+    name: "Login",
     component: Login,
   },
   {

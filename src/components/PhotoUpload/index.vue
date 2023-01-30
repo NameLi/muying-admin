@@ -427,8 +427,8 @@ export default {
     // 获取七牛上传 token
     async getQiniuUpToken() {
       let params = {
-        type: "photo",
         category: this.category,
+        type: "photo",
       };
 
       if (!this.upToken) {

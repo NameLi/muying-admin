@@ -198,6 +198,7 @@ export default {
               <i class="subject-card-delete el-icon-close"></i>
               <div class="subject-card-poster">
                 <img
+                  class="subject-card-poster-img"
                   src="${row.poster}"
                 />
               </div>

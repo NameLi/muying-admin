@@ -63,6 +63,7 @@ import router from "@/router/index";
 import Layout from "@/pages/Layout";
 
 export default {
+  name: "Login",
   data() {
     return {
       rules: {

@@ -6,6 +6,7 @@
 ## 演示
 演示地址：[https://test-admin-h5.ixook.com](https://test-admin-h5.ixook.com)  
 接口文档：[https://doc.ixook.com](https://doc.ixook.com/doc/movie-admin/api?api=readme)
+开发文档：[https://admin-doc.ixook.com](https://admin-doc.ixook.com)
 
 ## 技术栈
 - `vue2.6`
@@ -21,7 +22,7 @@
 - `vue-lazyload` [图片懒加载插件](https://github.com/hilongjw/vue-lazyload)
 - `vue-json-viewer` [json 数据预览组件](https://github.com/chenfengjw163/vue-json-viewer)
 - `vuedraggable` [一款基于 Sortable.js 的 Vue 拖拽组件](https://github.com/SortableJS/Vue.Draggable)
-- `wangeditor` [一款简洁的开源 Web 富文本编辑器](https://www.wangeditor.com/)
+- `wangeditor` [一款简洁的开源 Web 富文本编辑器](https://www.wangeditor.com)
 
 ## 安装
 ```

@@ -42,7 +42,10 @@ axios.interceptors.response.use(res => {
 					})
 
 					localStorage.clear()
-					router.replace('/login')
+
+					if(router.currentRoute.name !== 'Login') {
+						router.replace('/login')
+					}
 					break
 
 				case 200:
