@@ -4,7 +4,7 @@
 本项目会长期更新。
 
 ## 演示
-- 演示地址：[https://test-admin-h5.ixook.com](https://test-admin-h5.ixook.com)  
+- 演示地址：[https://test-admin.ixook.com](https://test-admin.ixook.com)  
 - 接口文档：[https://doc.ixook.com](https://doc.ixook.com/doc/movie-admin/api?api=readme)
 - 开发文档：[https://admin-doc.ixook.com](https://admin-doc.ixook.com)
 
