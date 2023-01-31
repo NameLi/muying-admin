@@ -5,7 +5,7 @@
 
 ## 演示
 - 演示地址：[https://test-admin.ixook.com](https://test-admin.ixook.com)  
-- 接口文档：[https://doc.ixook.com](https://doc.ixook.com/doc/movie-admin/api?api=readme)
+- 接口文档：[https://doc.ixook.com](https://doc.ixook.com/doc/movie-admin-test/api)
 - 开发文档：[https://admin-doc.ixook.com](https://admin-doc.ixook.com)
 
 ## 技术栈
